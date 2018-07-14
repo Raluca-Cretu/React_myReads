@@ -19,7 +19,7 @@ render() {
               		<div className='bookshelf-books'>
               		</div>
 				</div>
-				/*<button onClick={() => props.onAddBook(books)} className='open-search'> Add book </button>*/
+				/*<button onClick={() => onAddBook(books)} className='open-search'> Add book </button>*/
 			))}
 		</div>
 	)
