@@ -38,6 +38,8 @@ class BooksApp extends React.Component {
     this.setState ((state) => ({
       books: state.books.filter((b) => b.id === book.id)
     }))
+
+    BooksAPI.get(books)
   }
 
   render() {

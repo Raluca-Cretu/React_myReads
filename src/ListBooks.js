@@ -2,11 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import * as BooksAPI from '../BooksAPI';
 
+class ListBooks extends Component {
+	static propTypes = {
+		books: PropTypes.array.isRequired,
+		onAddBook: PropTypes.func.isRequired
+	}
 
-function ListBooks (props) {
+}
+
+render() {
 	return (
 		<div className='list-books-content'>
-			{props.books.map((books) => (
+			{this.props.books.map((books) => (
 				<div className='bookshelf'>
 					<h2 className='bookshelf-title'>Currently Reading</h2>
               		<div className='bookshelf-books'>
