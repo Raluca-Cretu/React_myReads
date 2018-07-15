@@ -3,7 +3,7 @@ import ListBooks from './ListBooks'
 import * as BooksAPI from './BooksAPI'
 
 
-render () {
+render() {
 
     return (
         <li>
@@ -20,6 +20,7 @@ render () {
                             </select>
                         </div>
                     </div>
+                 </div>
                 <div className="book-title">{book.title}</div>
                 <div className="book-authors">{book.authors}</div>
             </div>

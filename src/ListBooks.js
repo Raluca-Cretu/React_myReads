@@ -3,9 +3,26 @@ import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI';
 
 class ListBooks extends Component {
+	state
+
 	static propTypes = {
 		books: PropTypes.array.isRequired,
 		onAddBook: PropTypes.func.isRequired
+	}
+
+	renderShelf() {
+		return (
+	        <div className='bookshelf'>
+				<h2 className='bookshelf-title'>{title}</h2>
+          		<div className='bookshelf-books'>
+          			<ol className="books-grid">
+          				{books.map ((book) => (
+          					<Book key={book.id} book={book} />
+          				))}
+          			</ol>
+          		</div>
+          	</div>
+		)
 	}
 
 	render() {
@@ -15,18 +32,9 @@ class ListBooks extends Component {
                     <h1>MyReads</h1>
                 </div>
                 <div className="list-books-content">
-                    <div className='bookshelf'>
-						<h2 className='bookshelf-title'>c</h2>
-	              		<div className='bookshelf-books'></div>
-	              	</div>
+
                 </div>
                 <div className="open-search">
-               		/*<a onClick={() => onAddBook(books)} >Add a book</a>
-                    <Link
-                        to='/search'
-                    >
-                        Add a book
-                    </Link>*/
                 </div>
             </div>
 		)

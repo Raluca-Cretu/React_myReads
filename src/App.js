@@ -20,6 +20,7 @@ class BooksApp extends React.Component {
     read: []
     showSearchPage: false*/
   }
+
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
@@ -43,6 +44,7 @@ class BooksApp extends React.Component {
 
     BooksAPI.get(books)
   }
+
 
   render() {
     return (
