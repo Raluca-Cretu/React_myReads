@@ -6,6 +6,7 @@ import SearchPage from './SearchPage'
 
 class BooksApp extends React.Component {
   state = {
+    screen: 'list',
     /**
      * TODO: Instead of using this state variable to keep track of which page
      * we're on, use the URL in the browser's address bar. This will ensure that
@@ -46,10 +47,14 @@ class BooksApp extends React.Component {
   render() {
     return (
       <div>
-        <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
-        <ListBooks books={this.state.wantToRead}/>
-        <ListBooks books={this.state.read}/>
-        <SearchPage/>
+        {this.state.screen === 'list' && (
+          <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
+          <ListBooks books={this.state.wantToRead}/>
+          <ListBooks books={this.state.read}/>
+        )}
+        {this.state.screen === 'search' && (
+          <SearchPage/>
+        )}
       </div>
     )
   }
