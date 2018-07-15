@@ -1,7 +1,8 @@
 import React from 'react'
-import ListBooks, { Component } from './ListBooks'
+import ListBooks from './ListBooks'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
+import SearchPage from './SearchPage'
 
 class BooksApp extends React.Component {
   state = {
@@ -48,6 +49,7 @@ class BooksApp extends React.Component {
         <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
         <ListBooks books={this.state.wantToRead}/>
         <ListBooks books={this.state.read}/>
+        <SearchPage/>
       </div>
     )
   }

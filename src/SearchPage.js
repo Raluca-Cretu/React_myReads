@@ -14,7 +14,7 @@ class SearchPage extends Component {
   	this.setState( {query: query.trim() })
   }
 
-  render() {
+render() {
   	const { books, onAddBook } = this.props
   	const { query } = this.state
 
@@ -30,24 +30,23 @@ class SearchPage extends Component {
 
   	return(
   		<div className="search-books">
-  			{showingBooks.map((books) => (
-	           <div className="search-books-bar">
-	              <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
-	              <div className="search-books-input-wrapper">
+            <div className="search-books-bar">
+	            <a className="close-search" >Close</a>
+	            <div className="search-books-input-wrapper">
 	                <input
 	                	type="text"
 	                	placeholder="Search by title or author"
 	                	value={query}
 	                	onChange={(event) => this.updateQuery(event.target.value)}
 	                />
-	              </div>
 	            </div>
-	            <div className="search-books-results">
-	              <ol className="books-grid"></ol>
-	            </div>
-  			))}
+	        </div>
+            <div className="search-books-results">
+                <ol className="books-grid"></ol>
+            </div>
         </div>
-    );
-  }
+    )
+}
 
-export default SearchPage;
+
+export default SearchPage

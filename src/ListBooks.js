@@ -10,22 +10,28 @@ class ListBooks extends Component {
 
 	render() {
 		return (
-			<div className='list-books-content'>
-				{this.props.books.map((books) => (
-					<div className='bookshelf'>
-						<h2 className='bookshelf-title'>Currently Reading</h2>
-	              		<div className='bookshelf-books'>
-	              		</div>
-					</div>
-					/*<button onClick={() => onAddBook(books)} className='open-search'> Add book </button>*/
-				))}
-			</div>
+			<div className="list-books">
+                <div className="list-books-title">
+                    <h1>MyReads</h1>
+                </div>
+                <div className="list-books-content">
+                    <div className='bookshelf'>
+						<h2 className='bookshelf-title'>c</h2>
+	              		<div className='bookshelf-books'></div>
+	              	</div>
+                </div>
+                <div className="open-search">
+               		/*<a onClick={() => onAddBook(books)} >Add a book</a>
+                    <Link
+                        to='/search'
+                    >
+                        Add a book
+                    </Link>*/
+                </div>
+            </div>
 		)
 
 	}
 }
-
-
-
 
 export default ListBooks
