@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import ListBooks from './ListBooks';
-import * as BooksAPI from '../BooksAPI';
+import React, { Component } from 'react'
+import ListBooks from './ListBooks'
+import * as BooksAPI from './BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import * as BooksAPI from '../BooksAPI';
+import * as BooksAPI from './BooksAPI';
 
 class ListBooks extends Component {
 	static propTypes = {
@@ -8,23 +8,24 @@ class ListBooks extends Component {
 		onAddBook: PropTypes.func.isRequired
 	}
 
+	render() {
+		return (
+			<div className='list-books-content'>
+				{this.props.books.map((books) => (
+					<div className='bookshelf'>
+						<h2 className='bookshelf-title'>Currently Reading</h2>
+	              		<div className='bookshelf-books'>
+	              		</div>
+					</div>
+					/*<button onClick={() => onAddBook(books)} className='open-search'> Add book </button>*/
+				))}
+			</div>
+		)
+
+	}
 }
 
-render() {
-	return (
-		<div className='list-books-content'>
-			{this.props.books.map((books) => (
-				<div className='bookshelf'>
-					<h2 className='bookshelf-title'>Currently Reading</h2>
-              		<div className='bookshelf-books'>
-              		</div>
-				</div>
-				/*<button onClick={() => onAddBook(books)} className='open-search'> Add book </button>*/
-			))}
-		</div>
-	)
-
-}
 
 
-export default ListBooks;
+
+export default ListBooks

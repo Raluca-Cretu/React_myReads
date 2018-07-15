@@ -1,5 +1,5 @@
 import React from 'react'
-import ListBooks from './ListBooks'
+import ListBooks, { Component } from './ListBooks'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -34,9 +34,9 @@ class BooksApp extends React.Component {
       this.setState({ currentlyReading, wantToRead, read });
   }
 */
-  addBook = (book) => {
+  addBook = (books) => {
     this.setState ((state) => ({
-      books: state.books.filter((b) => b.id === book.id)
+      books: state.books.filter((b) => b.id === books.id)
     }))
 
     BooksAPI.get(books)
