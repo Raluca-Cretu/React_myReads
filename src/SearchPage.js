@@ -6,13 +6,15 @@ import sortBy from 'sort-by'
 
 
 class SearchPage extends Component {
-  state = {
-      query: ''
-  }
+    state = {
+        query: ''
+    };
 
-  updateQuery = (query) => {
-  	this.setState( {query: query.trim() })
-  }
+    updateQuery = (query) => {
+     	this.setState({
+            query: query.trim()
+        })
+    }
 
 render() {
   	const { books, onAddBook } = this.props
@@ -31,7 +33,7 @@ render() {
   	return(
   		<div className="search-books">
             <div className="search-books-bar">
-	            <a className="close-search" >Close</a>
+	            <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
 	            <div className="search-books-input-wrapper">
 	                <input
 	                	type="text"

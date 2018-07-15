@@ -49,8 +49,6 @@ class BooksApp extends React.Component {
       <div>
         {this.state.screen === 'list' && (
           <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
-          <ListBooks books={this.state.wantToRead}/>
-          <ListBooks books={this.state.read}/>
         )}
         {this.state.screen === 'search' && (
           <SearchPage/>
