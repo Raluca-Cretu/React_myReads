@@ -3,7 +3,9 @@ import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI';
 
 class ListBooks extends Component {
-	state
+	state = {
+		books: []
+	}
 
 	static propTypes = {
 		books: PropTypes.array.isRequired,
@@ -16,9 +18,15 @@ class ListBooks extends Component {
 				<h2 className='bookshelf-title'>{title}</h2>
           		<div className='bookshelf-books'>
           			<ol className="books-grid">
-          				{books.map ((book) => (
-          					<Book key={book.id} book={book} />
-          				))}
+          				<li>
+          				{books.filter (book =>  book.shelf === "currently reading" }
+          				</li>
+          				<li>
+          				{books.filter (book =>  book.shelf === "want to read" }
+          				</li>
+          				<li>
+          				{books.filter (book =>  book.shelf === "read" }
+          				</li>
           			</ol>
           		</div>
           	</div>

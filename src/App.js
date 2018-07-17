@@ -7,48 +7,35 @@ import SearchPage from './SearchPage'
 class BooksApp extends React.Component {
   state = {
     screen: 'list',
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
     books: []
-     /**
-    currentlyReading: [],
-    wantToRead: [],
-    read: []
-    showSearchPage: false*/
   }
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
-    })
-  }
-
-/*
-  getBooks () {
-    BooksAPI.getAll().then((books) => {
-
-      let currentlyReading = books.filter(book => book.shelf);
-      let wantToRead = books.filter(book => book.shelf);
-      let read = books.filter(book => book.shelf)
-      this.setState({ currentlyReading, wantToRead, read });
-  }
-*/
-  addBook = (books) => {
-    this.setState ((state) => ({
-      books: state.books.filter((b) => b.id === books.id)
-    }))
-
-    BooksAPI.get(books)
+    });
   }
 
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <div className="list-books">
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
+          <div className="list-books-content">
+            <div>
+              <Bookshelf title='Currently Reading' books ={books.filter(book =>  book.shelf === "currentlyReading")}/>
+              <Bookshelf title='Want to Read' books ={books.filter (book =>  book.shelf === "wantToRead")}/>
+              <Bookshelf title='Read' books ={books.filter (book =>  book.shelf === "read")}/>
+            </div>
+          </div>
+          <div className="open-search">
+            <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+          </div>
+        </div>
+
         {this.state.screen === 'list' && (
           <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
         )}
