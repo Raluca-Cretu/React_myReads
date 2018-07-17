@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ListBooks from './ListBooks'
-import * as BooksAPI from './BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 
@@ -15,6 +14,14 @@ class SearchPage extends Component {
             query: query.trim()
         })
     }
+
+/* addBook = (books) => {
+    this.setState ((state) => ({
+      books: state.books.filter((b) => b.id === books.id)
+    }))
+
+    BooksAPI.get(books)
+  }*/
 
     render() {
       	const { books, onAddBook } = this.props
@@ -44,7 +51,8 @@ class SearchPage extends Component {
     	            </div>
     	        </div>
                 <div className="search-books-results">
-                    <ol className="books-grid"></ol>
+                    <ol className="books-grid">
+                    </ol>
                 </div>
             </div>
         )
