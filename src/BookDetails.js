@@ -18,7 +18,7 @@ class BookDetails extends Component {
   }
 
   render() {
-  	const { book } = this.props;
+  	const { book, title, authors } = this.props;
     return (
       <li>
         <div className="book">
@@ -35,8 +35,8 @@ class BookDetails extends Component {
               </div>
       	  </div>
 
-          <div className="book-title">{book.title}</div>
-          <div className="book-authors">{book.authors}</div>
+          <div className="book-title">{title}</div>
+          <div className="book-authors">{authors}</div>
         </div>
       </li>
     )

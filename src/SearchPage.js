@@ -15,27 +15,19 @@ class SearchPage extends Component {
         })
     }
 
-/* addBook = (books) => {
-    this.setState ((state) => ({
-      books: state.books.filter((b) => b.id === books.id)
-    }))
-
-    BooksAPI.get(books)
-  }*/
-
     render() {
       	const { books, onAddBook } = this.props
       	const { query } = this.state
 
-      	let showingBooks
+      	let searchingBook
       	if (query) {
       		const match = new RegExp (escapeRegExp(query), 'i')
-      		showingBooks = books.filter((books) => match.test(books.name))
+      		searchingBook = books.filter((books) => match.test(books.name))
       	} else {
-      		showingBooks= books
+      		searchingBook= books
     }
 
-  	showingBooks.sort(sortBy('name'))
+  	searchingBook.sort(sortBy('name'))
 
       	return(
       		<div className="search-books">
@@ -52,6 +44,7 @@ class SearchPage extends Component {
     	        </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
+                       
                     </ol>
                 </div>
             </div>

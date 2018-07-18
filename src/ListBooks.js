@@ -9,7 +9,7 @@ class ListBooks extends Component {
   }
 
   static propTypes = {
-	  books: PropTypes.array.isRequired,
+	  books: PropTypes.array,
 	  title: PropTypes.string.isRequired,
   }
 
