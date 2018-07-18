@@ -3,16 +3,27 @@ import PropTypes from 'prop-types'
 
 
 class BookDetails extends Component {
-  static propTypes = {
+  state = {
+    books: []
+  }
 
+  static propTypes = {
+  	book: PropTypes.shape({
+      id: PropTypes.string,
+      imageLinks: PropTypes.object.isRequired,
+      title: PropTypes.string.isRequired,
+      authors: PropTypes.array,
+      shelf: PropTypes.string.isRequired,
+    }),
   }
 
   render() {
+  	const { book } = this.props;
     return (
       <li>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${imageThumb})` }}></div>
+            <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageThumb})` }}></div>
               <div className="book-shelf-changer">
                 <select>
                   <option value="none" disabled>Move to...</option>

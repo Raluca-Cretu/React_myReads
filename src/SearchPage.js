@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ListBooks from './ListBooks'
+import BookDetails from './BookDetails'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 

@@ -18,6 +18,7 @@ class BooksApp extends React.Component {
 
 
   render() {
+    const { books } = this.state;
     return (
       <div className="app">
         <div className="list-books">
@@ -26,9 +27,9 @@ class BooksApp extends React.Component {
           </div>
           <div className="list-books-content">
             <div>
-              <Bookshelf title='Currently Reading' books ={books.filter(book =>  book.shelf === "currentlyReading")}/>
-              <Bookshelf title='Want to Read' books ={books.filter (book =>  book.shelf === "wantToRead")}/>
-              <Bookshelf title='Read' books ={books.filter (book =>  book.shelf === "read")}/>
+              <ListBooks title='Currently Reading' books ={books.filter(book =>  book.shelf === "currentlyReading")}/>
+              <ListBooks title='Want to Read' books ={books.filter (book =>  book.shelf === "wantToRead")}/>
+              <ListBooks title='Read' books ={books.filter (book =>  book.shelf === "read")}/>
             </div>
           </div>
           <div className="open-search">
