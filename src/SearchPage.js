@@ -16,8 +16,8 @@ class SearchPage extends Component {
     }
 
     render() {
-      	const { books, onAddBook } = this.props
-      	const { query } = this.state
+      	const { query, books} = this.props
+   
 
       	let searchingBook
       	if (query) {
@@ -44,7 +44,7 @@ class SearchPage extends Component {
     	        </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                       
+                       <BookDetails/>
                     </ol>
                 </div>
             </div>

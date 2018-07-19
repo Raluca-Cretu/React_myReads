@@ -10,7 +10,7 @@ class ListBooks extends Component {
 
   static propTypes = {
 	  books: PropTypes.array,
-	  title: PropTypes.string.isRequired,
+	  title: PropTypes.string,
   }
 
   render() {
@@ -20,9 +20,7 @@ class ListBooks extends Component {
 		  <h2 className='bookshelf-title'>{title}</h2>
       	  <div className='bookshelf-books'>
       		<ol className="books-grid">
-			{books.map( book => (
-				<BookDetails />
-			))}
+				<BookDetails/>
       		</ol>
       	  </div>
       </div>
