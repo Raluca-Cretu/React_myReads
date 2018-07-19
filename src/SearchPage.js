@@ -24,10 +24,10 @@ class SearchPage extends Component {
       		const match = new RegExp (escapeRegExp(query), 'i')
       		searchingBook = books.filter((books) => match.test(books.name))
       	} else {
-      		searchingBook= books
-    }
+      		searchingBook = books
+        }
 
-  	searchingBook.sort(sortBy('name'))
+  	    searchingBook.sort(sortBy('name'))
 
       	return(
       		<div className="search-books">
