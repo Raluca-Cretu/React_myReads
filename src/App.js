@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import ListBooks from './ListBooks'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
@@ -16,6 +17,7 @@ class BooksApp extends React.Component {
     });
   }
 
+  changeShelf = ()
 
   render() {
     const { books } = this.state;
@@ -36,12 +38,8 @@ class BooksApp extends React.Component {
             <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
           </div>
         </div>
-
-        {this.state.screen === 'list' && (
-          <ListBooks onAddBook={this.addBook} books={this.state.currentlyReading}/>
-        )}
-        {this.state.screen === 'search' && (
-          <SearchPage/>
+        <Route exact path="/" render={() => (
+          <ListBooks/>
         )}
       </div>
     )
