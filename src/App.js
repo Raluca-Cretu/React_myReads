@@ -17,6 +17,9 @@ class BooksApp extends React.Component {
     });
   }
 
+  updateShelf = (book, shelf) => {
+
+  }
 
   render() {
     const { books } = this.state;
@@ -24,7 +27,7 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route exact path="/" render={() => (
           <ListBook books={this.state.books}
-                    onUpdateShelf={(books, shelf) => this.updateShelf(book, shelf)}/>
+                    onUpdateShelf={(book, shelf) => this.updateShelf(book, shelf)}/>
         )}/>
       </div>
     )

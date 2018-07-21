@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import BookDetails from './BookDetails'
+import {Route, Link} from 'react-router-dom'
 
 
 class ListBooks extends Component {
 	updateBook = (book, shelf) => {
-		this.props.onUpdateShelf(book,shelf)
+		this.props.onUpdateShelf(book, shelf)
 	}
 
 	render() {
