@@ -8,7 +8,6 @@ import BookDetails from './BookDetails'
 
 class BooksApp extends React.Component {
   state = {
-    screen: 'list',
     books: []
   }
 
@@ -24,7 +23,8 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
         <Route exact path="/" render={() => (
-          <ListBook/>
+          <ListBook books={this.state.books}
+                    onUpdateShelf={(books, shelf) => this.updateShelf(book, shelf)}/>
         )}/>
       </div>
     )
