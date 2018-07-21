@@ -33,7 +33,7 @@ class SearchPage extends Component {
             <Route exact path="/search" render={() => (
                 <div className="search-books">
                     <div className="search-books-bar">
-                        <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
+                        <Link className="close-search" to="/">Close</Link>
                         <div className="search-books-input-wrapper">
                             <input
                                 type="text"
@@ -45,11 +45,13 @@ class SearchPage extends Component {
                     </div>
                     <div className="search-books-results">
                         <ol className="books-grid">
-                           <BookDetails/>
+
                         </ol>
                     </div>
                 </div>
-            )}
+            )} />
+
+           <Route exact path="/" render 
       		
         )
     }
