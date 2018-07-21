@@ -1,9 +1,10 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import BookShelf from './BookShelf'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import SearchPage from './SearchPage'
+import BookDetails from './BookDetails'
 
 class BooksApp extends React.Component {
   state = {
@@ -39,7 +40,7 @@ class BooksApp extends React.Component {
           </div>
         </div>
         <Route exact path="/" render={() => (
-          <ListBooks/>
+          <BookShelf/>
         )}
       </div>
     )

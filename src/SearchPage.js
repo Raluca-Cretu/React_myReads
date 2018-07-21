@@ -6,8 +6,9 @@ import sortBy from 'sort-by'
 
 class SearchPage extends Component {
     state = {
-        query: ''
-    };
+        query: '',
+        showingBooks: []
+    }
 
     updateQuery = (query) => {
      	this.setState({
@@ -51,8 +52,7 @@ class SearchPage extends Component {
                 </div>
             )} />
 
-           <Route exact path="/" render 
-      		
+
         )
     }
 }
