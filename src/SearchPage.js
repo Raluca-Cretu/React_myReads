@@ -23,7 +23,6 @@ class SearchPage extends Component {
                     showingBooks = books.filter((books) => match.test(books.name))
                     }
                 } this.setState ({showingBooks})
-                }
             })
         } else {
             this.setState ({showingBooks})

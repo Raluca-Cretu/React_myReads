@@ -4,14 +4,9 @@ import BookDetails from './BookDetails'
 
 
 class ListBooks extends Component {
- 	state = {
-	    books: []
+	updateBook = (book, shelf) => {
+		this.props.onUpdateShelf(book,shelf)
 	}
-
-	static propTypes = {
-		books: PropTypes.array,
-	    title: PropTypes.string,
-	  }
 
 	render() {
 	  	return (
