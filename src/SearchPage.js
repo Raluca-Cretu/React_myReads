@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import BookDetails from './BookDetails'
+import * as BooksAPI from './BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
-
+ 
 
 class SearchPage extends Component {
     state = {
@@ -14,21 +15,24 @@ class SearchPage extends Component {
      	this.setState({
             query: query.trim()
         })
+        let searchingBooks = []
+        if (query) {
+            BooksAPI.search(query).then(response => {
+                if (response.length) {
+                    const match = new RegExp (escapeRegExp(query), 'i')
+                    showingBooks = books.filter((books) => match.test(books.name))
+                    }
+                } this.setState ({showingBooks})
+                }
+            })
+        } else {
+            this.setState ({showingBooks})
+          }
+        showingBooks.sort(sortBy('name'))
     }
 
     render() {
-      	const { query, books} = this.props
-   
-
-      	let searchingBook
-      	if (query) {
-      		const match = new RegExp (escapeRegExp(query), 'i')
-      		searchingBook = books.filter((books) => match.test(books.name))
-      	} else {
-      		searchingBook = books
-        }
-
-  	    searchingBook.sort(sortBy('name'))
+      	const { query } = this.state
 
       	return(
             <Route exact path="/search" render={() => (

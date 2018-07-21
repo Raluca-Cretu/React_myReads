@@ -57,9 +57,3 @@ class ListBooks extends Component {
 
 export default ListBooks
 
-
-        <div>
-	              <ListBooks title='Currently Reading' books ={books.filter(book =>  book.shelf === "currentlyReading")}/>
-	              <ListBooks title='Want to Read' books ={books.filter (book =>  book.shelf === "wantToRead")}/>
-	              <ListBooks title='Read' books ={books.filter (book =>  book.shelf === "read")}/>
-	            </div>
