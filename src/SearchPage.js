@@ -14,6 +14,11 @@ class SearchPage extends Component {
         showingBooks: []
     }
 
+    updateShelf = (book, shelf) => {
+
+    }
+
+
     updateQuery = (query) => {
      	this.setState({
             query: query.trim()
@@ -54,13 +59,15 @@ class SearchPage extends Component {
                     </div>
                     <div className="search-books-results">
                         <ol className="books-grid">
-
+                            {this.state.showingBooks.map((book) => (
+                                <BookDetails book={book}
+                                    onUpdateBook={(book,shelf) => this.updateShelf(book,shelf)}/>
+                                ))
+                            }
                         </ol>
                     </div>
                 </div>
             )} />
-
-
         )
     }
 }

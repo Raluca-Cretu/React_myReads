@@ -17,9 +17,6 @@ class BooksApp extends React.Component {
     });
   }
 
-  updateShelf = (book, shelf) => {
-
-  }
 
   render() {
     return (
