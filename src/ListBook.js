@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import BookDetails from './BookDetails'
-import {Route, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
-class ListBooks extends Component {
+class ListBook extends Component {
 	updateBook = (book, shelf) => {
 		this.props.onUpdateShelf(book, shelf)
 	}
@@ -22,7 +21,7 @@ class ListBooks extends Component {
 	                <div className="bookshelf-books">
 	                  <ol className="books-grid">
 	                  	{this.props.books.filter(book => book.shelf === 'currentlyReading')
-	                  		.map (book => (
+	                  		.map(book => (
 	                  			<BookDetails key={book.id} book={book} onUpdateBook={(book, shelf) => this.updateBook(book, shelf)}></BookDetails>
 	                  		))
 	                  	}
@@ -63,5 +62,4 @@ class ListBooks extends Component {
     }
 }
 
-export default ListBooks
-
+export default ListBook
