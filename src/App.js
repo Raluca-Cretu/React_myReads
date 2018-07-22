@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import ListBook from './ListBook'
+import SearchPage from './SearchPage'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -17,11 +18,7 @@ class BooksApp extends React.Component {
     });
   }
 
-  updateShelf = (book) => {
-     this.setState((state) => ({
-      books: state.books.filter((b) => b.id !== books.id)
-     }))
-  }
+ 
 
 
   render() {
@@ -29,6 +26,10 @@ class BooksApp extends React.Component {
       <div className="app">
         <Route exact path="/" render={() => (
           <ListBook books={this.state.books}
+                    onUpdateShelf={(book, shelf) => this.updateShelf(book, shelf)} />
+        )} />
+        <Route exact path="/search" render={() => (
+          <SearchPage books={this.state.books}
                     onUpdateShelf={(book, shelf) => this.updateShelf(book, shelf)} />
         )} />
       </div>
