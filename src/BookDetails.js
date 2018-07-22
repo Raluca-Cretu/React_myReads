@@ -3,29 +3,26 @@ import React, { Component } from 'react'
 
 
 class BookDetails extends Component {
-  state = {
-    books: []
-  }
+    state = {
+      books: []
+    }
 
-  changeBookShelf = (event) => {
-  	this.setState({
-  		shelf: event.target.value
-  	})
-  	this.props.onUpdateBook(this.props.book, event.target.value)
-  }
+    changeBookShelf = (event) => {
+      this.setState({
+  	  shelf: event.target.value
+  	  })
+  	  this.props.onUpdateBook(this.props.book, event.target.value)
+    }
 
-
-
-  render() {
-  	const style = {
+    render() {
+  	  const style = {
 		width: 128,
 		height: 193,
-		backgroundImage: 'url('${this.props.book.imageLinks.thumbnail}')'
+		/*backgroundImage: 'url('${this.props.book.imageLinks.thumbnail}')'*/
   	}
 
 
     return (
-    	
       <li>
         <div className="book">
           <div className="book-top">

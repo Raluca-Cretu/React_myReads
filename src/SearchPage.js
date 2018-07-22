@@ -14,10 +14,6 @@ class SearchPage extends Component {
         showingBooks: []
     }
 
-    updateShelf = (book, shelf) => {
-
-    }
-
 
     updateQuery = (query) => {
      	this.setState({
