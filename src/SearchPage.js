@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import BookDetails from './BookDetails'
-import ListBook from './ListBook'
 import './App.css'
 import * as BooksAPI from './BooksAPI'
 import escapeRegExp from 'escape-string-regexp'

@@ -18,7 +18,7 @@ class BookDetails extends Component {
   	  const style = {
 		width: 128,
 		height: 193,
-		/*backgroundImage: 'url('${this.props.book.imageLinks.thumbnail}')'*/
+		backgroundImage: `url('${this.props.book.imageLinks.thumbnail}')`
   	}
 
 
@@ -26,7 +26,7 @@ class BookDetails extends Component {
       <li>
         <div className="book">
           <div className="book-top">
-            <div className="book-cover" style={{ style }}>
+            <div className="book-cover" style={ style }>
             </div>
             <div className="book-shelf-changer">
               <select onChange={this.changeBookShelf} value={this.state.shelf}>

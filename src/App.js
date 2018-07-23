@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import ListBook from './ListBook'
+
 import SearchPage from './SearchPage'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
@@ -18,8 +19,22 @@ class BooksApp extends React.Component {
     });
   }
 
- 
+  /*updateShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf).then((data) => {
+     })
+      this.setState((state) => ({
+        books: state.books.filter((b) => b.id !== book.id)
+        }))
+    
+  }*/
 
+  updateShelf = (book, shelf) => {
+    let books
+    this.state.books.filter((b) => b.id !== book.id)
+    this.setState({books})
+    BooksAPI.update(book, shelf).then((data) => {
+    })
+  }
 
   render() {
     return (
