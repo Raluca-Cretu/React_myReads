@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import ListBook from './ListBook'
-
 import SearchPage from './SearchPage'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
@@ -19,9 +18,9 @@ class BooksApp extends React.Component {
     });
   }
 
-  updateShelf = (book, Shelf) => {
-    BooksAPI.update(book, Shelf).then((data) => {
-      book.shelf = Shelf
+  updateShelf = (book, newShelf) => {
+    BooksAPI.update(book, newShelf).then((data) => {
+      book.shelf = newShelf
       let updateBooks = this.state.books.filter((b) => b.id !== book.id)
       updateBooks.push(book)
       this.setState({books: updateBooks})
