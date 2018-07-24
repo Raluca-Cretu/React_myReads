@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import BookDetails from './BookDetails'
 import './App.css'
 import * as BooksAPI from './BooksAPI'
-import escapeRegExp from 'escape-string-regexp'
 import sortBy from 'sort-by'
 import {Route, Link} from 'react-router-dom'
 
@@ -19,18 +18,16 @@ class SearchPage extends Component {
             query: query.trim()
         })
         let showingBooks = []
-        let books
         if (query) {
-            BooksAPI.search(query).then(response => {
-                if (response.length) {
-                    const match = new RegExp (escapeRegExp(query), 'i')
-                    showingBooks = books.filter((books) => match.test(books.name))
+            BooksAPI.search(query).then((books) => {
+                if (books.length>0) {
+                    this.setState ({showingBooks: books})
                     } else {
-                       this.setState ({showingBooks})
+                    this.setState ({showingBooks : []})
                     }
             })
         } else {
-            this.setState ({showingBooks})
+            this.setState({showingBooks: []})
           }
         showingBooks.sort(sortBy('name'))
     }
@@ -54,8 +51,8 @@ class SearchPage extends Component {
                     </div>
                     <div className="search-books-results">
                         <ol className="books-grid">
-                            {this.state.showingBooks.map((book) => (
-                                <BookDetails book={book}
+                            {this.state.showingBooks.map((book, i) => (
+                                <BookDetails key={i} book={book}
                                     onUpdateBook={(book,shelf) => this.updateShelf(book,shelf)}/>
                                 ))
                             }
